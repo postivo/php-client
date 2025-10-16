@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace Postivo\Models\Components;
 
 use Brick\DateTime\LocalDate;
-/** RequestOptions - Additional shipment settings. */
-class RequestOptions
+/** ShipmentOptions - Additional shipment settings. */
+class ShipmentOptions
 {
     /**
      * Scheduled dispatch date (ISO 8601).

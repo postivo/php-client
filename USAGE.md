@@ -41,7 +41,7 @@ $request = new Components\Shipment(
             fileName: 'document2.pdf',
         ),
     ],
-    options: new Components\RequestOptions(
+    options: new Components\ShipmentOptions(
         predefinedConfigId: 2670,
     ),
 );
@@ -97,7 +97,7 @@ $request = new Components\Shipment(
             fileName: 'document2.pdf',
         ),
     ],
-    options: new Components\RequestOptions(
+    options: new Components\ShipmentOptions(
         predefinedConfigId: 2670,
     ),
 );

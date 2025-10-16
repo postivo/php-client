@@ -3,12 +3,12 @@
 
 ## Supported Types
 
-### `Components\RequestOptions`
+### `Components\ShipmentOptions`
 
 ```php
 /**
-* @var Components\RequestOptions
+* @var Components\ShipmentOptions
 */
-Components\RequestOptions $value = /* values here */
+Components\ShipmentOptions $value = /* values here */
 ```
 

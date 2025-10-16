@@ -1,6 +1,6 @@
 [![Packagist Version](https://img.shields.io/packagist/v/postivo/postivo-client)](https://packagist.org/packages/postivo/postivo-client)
-[![GitHub License](https://img.shields.io/github/license/gsmservice-pl/messaging-sdk-php)](https://github.com/gsmservice-pl/messaging-sdk-php/blob/main/LICENSE)
-[![Static Badge](https://img.shields.io/badge/built_by-Speakeasy-yellow)](https://www.speakeasy.com/?utm_source=gsmservice-pl/messaging-sdk-php&utm_campaign=php)
+[![GitHub License](https://img.shields.io/github/license/postivo/php-client)](https://github.com/postivo/php-client/blob/main/LICENSE)
+[![Static Badge](https://img.shields.io/badge/built_by-Speakeasy-yellow)](https://www.speakeasy.com/?utm_source=postivo&utm_campaign=php)
 # POSTIVO.PL REST API Client SDK for PHP ≥ 8.2 (postivo/postivo-client)
 
 This package provides the **POSTIVO.PL Hybrid Mail Services SDK** for PHP (≥ 8.2), allowing you to dispatch shipments directly from your application via the [POSTIVO.PL](https://postivo.pl) platform.
@@ -9,20 +9,15 @@ This package provides the **POSTIVO.PL Hybrid Mail Services SDK** for PHP (≥ 8
 
 Comprehensive documentation of all methods and types is available below in [Available Resources and Operations](#available-resources-and-operations).
 
-You can also refer to the [REST API v1 documentation](https://api.postivo.pl/rest/) for additional details about this SDK.
-<!-- Start Summary [summary] -->
-## Summary
-
-
-<!-- End Summary [summary] -->
-
+You can also refer to the [REST API v1 documentation](https://api.postivo.pl/rest/v1/) for additional details about this SDK.
+<!-- No Summary [summary] -->
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
 <!-- $toc-max-depth=2 -->
 * [POSTIVO.PL REST API Client SDK for PHP ≥ 8.2 (postivo/postivo-client)](#postivopl-rest-api-client-sdk-for-php-82-postivopostivo-client)
   * [Additional documentation:](#additional-documentation)
   * [SDK Installation](#sdk-installation)
-  * [Requeirements:](#requeirements)
+  * [Requirements:](#requirements)
   * [SDK Example Usage](#sdk-example-usage)
   * [Authentication](#authentication)
   * [Available Resources and Operations](#available-resources-and-operations)
@@ -45,7 +40,7 @@ To install the SDK and add it as a dependency to an existing `composer.json` fil
 composer require "postivo/postivo-client"
 ```
 <!-- End SDK Installation [installation] -->
-## Requeirements:
+## Requirements:
 - Minimal required PHP version: 8.2
 <!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
@@ -92,7 +87,7 @@ $request = new Components\Shipment(
             fileName: 'document2.pdf',
         ),
     ],
-    options: new Components\RequestOptions(
+    options: new Components\ShipmentOptions(
         predefinedConfigId: 2670,
     ),
 );
@@ -148,7 +143,7 @@ $request = new Components\Shipment(
             fileName: 'document2.pdf',
         ),
     ],
-    options: new Components\RequestOptions(
+    options: new Components\ShipmentOptions(
         predefinedConfigId: 2670,
     ),
 );
@@ -477,6 +472,4 @@ looking for the latest version.
 ## Contributions
 
 While we value open-source contributions to this SDK, this library is generated programmatically. Any manual changes added to internal files will be overwritten on the next generation. 
-We look forward to hearing your feedback. Feel free to open a PR or an issue with a proof of concept and we'll do our best to include it in a future release. 
-
-### SDK Created by [Speakeasy](https://www.speakeasy.com/?utm_source=postivo/postivo-client&utm_campaign=php)
+We look forward to hearing your feedback. Feel free to open a PR or an issue with a proof of concept and we'll do our best to include it in a future release.

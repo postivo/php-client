@@ -1,4 +1,6 @@
-# Recipients1
+# Recipients
+
+A base recipient object.
 
 
 ## Supported Types

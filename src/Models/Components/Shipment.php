@@ -22,7 +22,7 @@ class Shipment
     public RecipientInline|RecipientFromAddressBook|RecipientFromAddressBookByExternalId|array $recipients;
 
     /**
-     * Document payload to print and enclose. For a single document, provide `DocumentPdf` or `DocumentLibrary`. For multiple documents, provide an array of `DocumentPdf`, `DocumentLibrary`, or `DocumentMock` objects (1–20).
+     * Document payload to print and enclose into shipment. For a single document, provide `DocumentPdf`, `DocumentLibrary`, or `DocumentMock` (for checking the price only). For multiple documents, provide an array of `DocumentPdf`, `DocumentLibrary`, or `DocumentMock` objects (1–20).
      *
      * @var DocumentPdf|DocumentLibrary|DocumentMock|array<DocumentPdf|DocumentLibrary|DocumentMock> $documents
      */
@@ -32,20 +32,20 @@ class Shipment
 
     /**
      *
-     * @var ?RequestOptions $options
+     * @var ?ShipmentOptions $options
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Postivo\Models\Components\RequestOptions|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Postivo\Models\Components\ShipmentOptions|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?RequestOptions $options = null;
+    public ?ShipmentOptions $options = null;
 
     /**
      * @param  RecipientInline|RecipientFromAddressBook|RecipientFromAddressBookByExternalId|array<RecipientInline|RecipientFromAddressBook|RecipientFromAddressBookByExternalId>  $recipients
      * @param  DocumentPdf|DocumentLibrary|DocumentMock|array<DocumentPdf|DocumentLibrary|DocumentMock>  $documents
-     * @param  ?RequestOptions  $options
+     * @param  ?ShipmentOptions  $options
      * @phpstan-pure
      */
-    public function __construct(RecipientInline|RecipientFromAddressBook|RecipientFromAddressBookByExternalId|array $recipients, DocumentPdf|DocumentLibrary|DocumentMock|array $documents, ?RequestOptions $options = null)
+    public function __construct(RecipientInline|RecipientFromAddressBook|RecipientFromAddressBookByExternalId|array $recipients, DocumentPdf|DocumentLibrary|DocumentMock|array $documents, ?ShipmentOptions $options = null)
     {
         $this->recipients = $recipients;
         $this->documents = $documents;

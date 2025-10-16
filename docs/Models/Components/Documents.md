@@ -1,6 +1,6 @@
-# Documents2
+# Documents
 
-Document payload to print and enclose. For a single document, provide `DocumentPdf` or `DocumentLibrary`. For multiple documents, provide an array of `DocumentPdf`, `DocumentLibrary`, or `DocumentMock` objects (1–20).
+A base document object.
 
 
 ## Supported Types
@@ -30,14 +30,5 @@ Components\DocumentLibrary $value = /* values here */
 * @var Components\DocumentMock
 */
 Components\DocumentMock $value = /* values here */
-```
-
-### `array`
-
-```php
-/**
-* @var array<Components\DocumentPdf|Components\DocumentLibrary|Components\DocumentMock>
-*/
-array $value = /* values here */
 ```
 
