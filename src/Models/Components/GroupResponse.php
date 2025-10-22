@@ -29,6 +29,15 @@ class GroupResponse
     public int $id;
 
     /**
+     * Indicates whether the group data was inherited from a main account’s shared Address Book.
+     *
+     * @var ?bool $inherited
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('inherited')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $inherited = null;
+
+    /**
      * Optional group description.
      *
      * @var ?string $description
@@ -40,13 +49,15 @@ class GroupResponse
     /**
      * @param  string  $name
      * @param  int  $id
+     * @param  ?bool  $inherited
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(string $name, int $id, ?string $description = null)
+    public function __construct(string $name, int $id, ?bool $inherited = null, ?string $description = null)
     {
         $this->name = $name;
         $this->id = $id;
+        $this->inherited = $inherited;
         $this->description = $description;
     }
 }

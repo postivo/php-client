@@ -30,13 +30,13 @@ class RecipientFromAddressBookByExternalId
     public ?string $postscript = null;
 
     /**
-     * Set to true to fetch recipient data by external ID from a main account’s shared Address Book.
+     * Set to true to fetch recipient data by external ID from inherited main account’s Address Book.
      *
-     * @var ?bool $fromShared
+     * @var ?bool $inherited
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('from_shared')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('inherited')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $fromShared = null;
+    public ?bool $inherited = null;
 
     /**
      * Custom shipment ID assigned by the user.
@@ -49,16 +49,16 @@ class RecipientFromAddressBookByExternalId
 
     /**
      * @param  string  $extId
-     * @param  ?bool  $fromShared
+     * @param  ?bool  $inherited
      * @param  ?string  $customId
      * @param  ?string  $postscript
      * @phpstan-pure
      */
-    public function __construct(string $extId, ?string $postscript = null, ?bool $fromShared = false, ?string $customId = null)
+    public function __construct(string $extId, ?string $postscript = null, ?bool $inherited = false, ?string $customId = null)
     {
         $this->extId = $extId;
         $this->postscript = $postscript;
-        $this->fromShared = $fromShared;
+        $this->inherited = $inherited;
         $this->customId = $customId;
     }
 }

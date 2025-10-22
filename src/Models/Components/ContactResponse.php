@@ -53,6 +53,15 @@ class ContactResponse
     public ?string $city;
 
     /**
+     * Indicates whether the contact data was inherited from a main account’s shared Address Book.
+     *
+     * @var ?bool $inherited
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('inherited')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $inherited = null;
+
+    /**
      * Name (person or company) — line 2.
      *
      * @var ?string $name2
@@ -122,6 +131,7 @@ class ContactResponse
      * @param  ?string  $address
      * @param  ?string  $postCode
      * @param  ?string  $city
+     * @param  ?bool  $inherited
      * @param  ?string  $name2
      * @param  ?string  $homeNumber
      * @param  ?string  $flatNumber
@@ -131,13 +141,14 @@ class ContactResponse
      * @param  ?array<int>  $groupIds
      * @phpstan-pure
      */
-    public function __construct(int $id, ?string $name = null, ?string $address = null, ?string $postCode = null, ?string $city = null, ?string $name2 = null, ?string $homeNumber = null, ?string $flatNumber = null, ?string $phoneNumber = null, ?string $extId = null, ?array $groupIds = null, ?string $country = 'PL')
+    public function __construct(int $id, ?string $name = null, ?string $address = null, ?string $postCode = null, ?string $city = null, ?bool $inherited = null, ?string $name2 = null, ?string $homeNumber = null, ?string $flatNumber = null, ?string $phoneNumber = null, ?string $extId = null, ?array $groupIds = null, ?string $country = 'PL')
     {
         $this->id = $id;
         $this->name = $name;
         $this->address = $address;
         $this->postCode = $postCode;
         $this->city = $city;
+        $this->inherited = $inherited;
         $this->name2 = $name2;
         $this->homeNumber = $homeNumber;
         $this->flatNumber = $flatNumber;
